@@ -14,6 +14,13 @@ const vueLifecycles = singleSpaVue({
 
 export const bootstrap = [
     vueLifecycles.bootstrap,
+    function () {
+        return Promise
+            .resolve()
+            .then(() => {
+                console.log('bootstrapped Vue!')
+            })
+    }
 ];
 
 export const mount = [

@@ -4,6 +4,8 @@
   "description": "",
   "main": "single-spa.config.js",
   "dependencies": {
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
     "single-spa": "^4.3.5",
     "single-spa-vue": "^1.4.0",
     "vue": "^2.6.10",
@@ -33,7 +35,11 @@
     "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "setup": "npm i & npm run setup:react & npm run setup:vue & npm run setup:vue2",
+    "setup:react": "cd pages/react-app && npm i",
+    "setup:vue": "cd pages/vue-app && npm i",
+    "setup:vue2": "cd pages/vue-app2 && npm i"
   },
   "author": "",
   "license": "ISC"

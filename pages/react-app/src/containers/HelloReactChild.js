@@ -1,20 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
+import {increase} from '../actions'
 
-export default class extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: 0,
-        };
-        this.handleClick = this.handleClick.bind(this);
-    }
+const HelloReactChild = ({onClick, id}) => (
+    <p onClick={onClick}>HelloReactChild{id}</p>
+);
 
-    handleClick() {
-        this.setState({id: this.state.id + 1})
-    }
+HelloReactChild.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired
+};
 
-    render(state = this.state) {
-        const {id} = state;
-        return <p onClick={this.handleClick}>HelloReactChild{id}</p>;
-    }
-}
+const mapStateToProps = (state) => ({
+    id: state.id,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    onClick: () => dispatch(increase()),
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(HelloReactChild)
