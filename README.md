@@ -1,3 +1,38 @@
+# Micro Fed
+
+Test for Micro Fed, write for sharing.
+
+## Structure
+
+move component concept to app level
+
+```text
+├── index.html
+├── package.json
+├── pages
+│   ├── navBar # nav app
+│   ├── react-app # react app
+│   │   ├── package.json
+│   │   ├── react.app.js # export life cycle (modify by react-app/src/index.js)
+│   │   └── src
+│   │       ├── App.js
+│   │       ├── actions
+│   │       │   └── index.js
+│   │       ├── containers
+│   │       │   └── HelloReactChild.js
+│   │       ├── index.html
+│   │       ├── index.js
+│   │       ├── reducers
+│   │       │   └── index.js
+│   │       └── router
+│   │           └── index.js
+│   ├── vue-app # vue app
+│   └── vue-app2 # anther vue app
+├── single-spa.config.js # single-spa config (register and start)
+└── webpack.config.js # portal webpack config
+
+```
+
 # RFC
 
 ## 如和更好的SPA通信

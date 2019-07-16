@@ -2,7 +2,7 @@
   "name": "micro-frontends",
   "version": "1.0.0",
   "description": "",
-  "main": "single-spa.config.js",
+  "private": true,
   "dependencies": {
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
